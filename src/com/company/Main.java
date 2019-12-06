@@ -121,7 +121,7 @@ public class Main {
         present.addAll(nyGift.getPresent());
         //System.out.println(present);
 
-
+        System.out.println("Sorted:");
         /**
          * 1 - sort by name
          * 2 - sort by price
@@ -129,5 +129,20 @@ public class Main {
          * otherwise - oops
          */
         nyGift.sort(cookiesArrayList, doughnutsArrayList, chocolateBarArrayList, 1);
+
+        try {
+            ObjectInputStream objectInputStreamCookies = new ObjectInputStream(new FileInputStream(COOKIES_PATH));
+            ObjectInputStream objectInputStreamChoco = new ObjectInputStream(new FileInputStream(CHOCOLATE_PATH));
+            ObjectInputStream objectInputStreamDou = new ObjectInputStream(new FileInputStream(DOUGHNUT_PATH));
+            Cookies c = (Cookies) objectInputStreamCookies.readObject();
+            ChocolateBar ch = (ChocolateBar) objectInputStreamChoco.readObject();
+            Doughnuts d = (Doughnuts) objectInputStreamDou.readObject();
+            System.out.println("\n\nDeserializated objects:\n"+c+"\n"+ch+"\n"+d);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
     }
 }
