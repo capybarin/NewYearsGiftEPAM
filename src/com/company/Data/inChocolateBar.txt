@@ -1,0 +1,3 @@
+ChoGal 255.5 50
+ChocolateBar 30 45
+BezdushniyVlad 400 1

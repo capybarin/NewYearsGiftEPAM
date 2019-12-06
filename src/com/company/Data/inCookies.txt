@@ -1,0 +1,2 @@
+Cookie 47.6 4
+notACookie 50 50
